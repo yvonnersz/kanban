@@ -4,6 +4,7 @@ class CreateRawMaterials < ActiveRecord::Migration
       t.string :chemical
       t.string :company
       t.integer :user_id
+      t.integer :lot_number_id
     end
   end
 end
