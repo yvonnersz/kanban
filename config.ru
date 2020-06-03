@@ -8,3 +8,4 @@ use Rack::MethodOverride
 # This line allows us to send PATCH and DELETE requests.
 
 run ApplicationController
+use UsersController
