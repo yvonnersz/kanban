@@ -1,3 +1,3 @@
-class LotNumbers < ActiveRecord::Base
+class LotNumber < ActiveRecord::Base
   belongs_to :raw_material
 end
