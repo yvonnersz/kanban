@@ -4,6 +4,7 @@ if ActiveRecord::Migrator.needs_migration?
   raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
 end
 
-use Rack::MethodOverride #allows us to send PATCH and DELETE requests
+use Rack::MethodOverride
+# This line allows us to send PATCH and DELETE requests.
 
 run ApplicationController
