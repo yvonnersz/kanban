@@ -3,8 +3,9 @@ class CreateRawMaterials < ActiveRecord::Migration
     create_table :raw_materials do |t|
       t.string :chemical
       t.string :company
+      t.string :lot_number
+      t.integer :amount
       t.integer :user_id
-      t.integer :lot_number_id
     end
   end
 end

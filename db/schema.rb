@@ -11,24 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200603213450) do
-
-  create_table "lot_numbers", force: :cascade do |t|
-    t.string  "lot"
-    t.integer "amount"
-    t.integer "raw_material_id"
-  end
+ActiveRecord::Schema.define(version: 20200603212439) do
 
   create_table "raw_materials", force: :cascade do |t|
     t.string  "chemical"
     t.string  "company"
+    t.string  "lot_number"
+    t.integer "amount"
     t.integer "user_id"
-    t.integer "lot_number_id"
-  end
-
-  create_table "user_raw_materials", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "raw_material_id"
   end
 
   create_table "users", force: :cascade do |t|
