@@ -30,7 +30,7 @@
     width: 100%;
   }
 
-  .welcome h1 {
+  .container .welcome h1 {
     font-family: 'Playfair Display', serif;
     font-size: 150px;
     text-align: center;
@@ -42,8 +42,18 @@
     margin-bottom: 10px;
   }
 
-  h2 {
-    border-bottom: 2px solid #ccc;
+  .container .content p {
+    text-align: justify;
+    font-size: 12px;
+    width: 100%; /* 480px / 800px */
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  h1 {
+
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
@@ -62,11 +72,7 @@
     overflow: hidden;
   }
 
-  .content p {
-    text-align: justify;
-    font-size: 12px;
-    width: 100%; /* 480px / 800px */
-  }
+
 
   .branding {
     clear: both;
@@ -75,7 +81,6 @@
   footer.branding {
     font-family: 'Playfair Display', serif;
     text-align: right;
-    border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
   }
