@@ -25,16 +25,17 @@
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     margin: 16px auto;
-    max-width: 960px;
+    max-width: 600px;
     padding: 2.25%; /* 18px / 800px */
-    width: 85%;
+    width: 100%;
   }
 
   h1 {
-    font-size: 150px;
-    line-height: 54px;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
     text-align: center;
-    padding: 50px;
+    padding-top: 75px;
+    padding-bottom: 75px;
   }
 
   h2 {
@@ -82,6 +83,10 @@
     border-top: 2px solid #ccc;
     margin-top: 20px;
     padding-top: 20px;
+  }
+
+  .nav {
+    text-align: center;
   }
 }
 
