@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 
   get '/users/:id' do
     @user = User.find_by(:id => params[:id])
+    @raw_materials = RawMaterial.all
     erb :'/users/show'
   end
 
