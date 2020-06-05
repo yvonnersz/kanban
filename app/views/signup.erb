@@ -1,10 +1,19 @@
-<h1>Sign Up</h1>
+<div class="container">
+  <head>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Patua+One&family=Rubik+Mono+One&family=Sigmar+One&family=Syncopate&display=swap');
+  </style>
+  </head>
 
-<form method="POST" action="/users">
-  <label for="username">Username</label>
-  <input type="text" id="username" name="username" placeholder="username"></br>
+  <header>
+      <h2>Registration</h2>
+  </header>
 
-  <label for="password">Password</label>
-  <input type="password" id="password" name="password" placeholder="password"></br>
-  <input type="submit" value="Create User">
-</form>
+  <form method="POST" action="/users">
+    <input type="text" id="username" name="username" placeholder="Please enter a username." class="button"></br></br>
+
+    <input type="password" id="password" name="password" placeholder="Please enter a password." class="button"></br></br>
+    <input type="submit" value="Create User" class="submit">
+  </form>
+  </body>
+</div>
