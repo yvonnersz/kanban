@@ -1,4 +1,10 @@
+<form method="POST" action="/raw_materials/<%= @raw_material.id %>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+
 Chemical: <%= @raw_material.chemical %></br>
 Company: <%= @raw_material.company %></br>
 Lot Number: <%= @raw_material.lot_number %></br>
 Amount: <%= @raw_material.amount %></br>
+
+<input type="submit" value="Delete">
+</form>

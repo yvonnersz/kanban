@@ -33,6 +33,11 @@ class RawMaterialsController < ApplicationController
     redirect "/raw_materials/#{@raw_material.id}"
   end
 
+  delete '/raw_materials/:id/delete' do
+    @raw_material = RawMaterial.find_by(:id => params[:id])
+    @raw_material.delete
+    redirect '/raw_materials'
+  end
 
 
 end
