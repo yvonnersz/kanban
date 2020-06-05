@@ -1,0 +1,26 @@
+<h1>Edit a Raw Material</h1>
+
+<% if current_user == @raw_material.user %>
+<form method="POST" action="/raw_materials/<%= @raw_material.id %>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+
+  <label for="chemical">Chemical</label></br>
+  <input type="text" name="chemical" value="<%= @raw_material.chemical %>"></br>
+
+  <label for="company">Company</label></br>
+  <input type="text" name="company" value="<%= @raw_material.company %>"></br></br>
+
+  <label for="company">Lot Number</label></br>
+  <input type="text" name="lot_number" value="<%= @raw_material.lot_number %>"></br></br>
+
+  <label for="company">Amount (kg)</label></br>
+  <input type="text" name="amount" value="<%= @raw_material.amount %>"></br></br>
+
+  <input type="submit" value="Edit Raw Material">
+
+</form>
+
+<% else %>
+You do not have access to edit this raw material.
+
+<% end %>
