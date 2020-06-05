@@ -25,17 +25,21 @@
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     margin: 16px auto;
-    max-width: 600px;
+    max-width: 500px;
     padding: 2.25%; /* 18px / 800px */
     width: 100%;
   }
 
   h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 120px;
+    font-size: 150px;
     text-align: center;
     padding-top: 75px;
     padding-bottom: 75px;
+    margin-left: -5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   h2 {
@@ -58,8 +62,9 @@
     overflow: hidden;
   }
 
-  .content {
+  .content p {
     text-align: center;
+    font-size: 12px;
     width: 100%; /* 480px / 800px */
   }
 
