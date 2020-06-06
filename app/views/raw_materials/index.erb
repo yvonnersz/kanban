@@ -14,7 +14,9 @@
   <body>
     <div class="raw_materials">
       <% @raw_materials.each.with_index(1) do |raw_material,index| %>
-        <%= index %>. <b><%= raw_material.chemical %></b></br>
+        <%= index %>. <b><%= raw_material.chemical %></b> 
+        from <%= raw_material.company %> 
+        submitted by <%= raw_material.user %></br>
       <% end %>
     </div>
   </body>
