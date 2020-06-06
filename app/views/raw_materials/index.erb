@@ -1,3 +1,22 @@
-<% @raw_materials.each do |raw_material| %>
-<%= raw_material.chemical %></br>
-<% end %>
+<div class="container">
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Patua+One&family=Rubik+Mono+One&family=Sigmar+One&family=Syncopate&display=swap');
+    </style>
+  </head>
+
+  <header>
+    <div class="all_raw_materials">
+      <h2>Raw Materials</h2>
+    </div>
+  </header>
+
+  <body>
+    <div class="raw_materials">
+      <% @raw_materials.each.with_index(1) do |raw_material,index| %>
+        <%= index %>. <b><%= raw_material.chemical %></b></br>
+      <% end %>
+    </div>
+  </body>
+
+</div>

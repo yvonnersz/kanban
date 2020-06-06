@@ -57,7 +57,7 @@
     font-size: 95px;
     text-align: center;
     padding-top: 75px;
-    padding-bottom: 75px;
+    padding-bottom: 50px;
     margin-left: -5px;
     margin-right: 5px;
     margin-top: 10px;
@@ -77,11 +77,30 @@
     height: 30px;
     width: 500px;
     text-align: center;
+    margin: 5px;
   }
 
   .submit {
     height: 30px;
     width: 500px;
+    margin: 5px;
+  }
+
+  .all_raw_materials h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 65px;
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    margin-left: -5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .raw_materials {
+    text-align: left;
+    margin-left: 100px;
   }
 
   .main {

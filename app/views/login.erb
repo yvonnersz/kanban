@@ -1,10 +1,22 @@
-<h1>Login</h1>
 
-<form method="POST" action="/login">
-  <label for="username">Username</label>
-  <input type="text" id="username" name="username" placeholder="username"></br>
+<div class="container">
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Patua+One&family=Rubik+Mono+One&family=Sigmar+One&family=Syncopate&display=swap');
+    </style>
+  </head>
 
-  <label for="password">Password</label>
-  <input type="password" id="password" name="password" placeholder="password"></br>
-  <input type="submit" value="Login">
-</form>
+  <header>
+      <h2>Login</h2>
+  </header>
+
+  <body>
+    <div class="form">
+      <form method="POST" action="/login">
+        <input type="text" id="username" name="username" placeholder="Please enter your username." class="button"></br>
+        <input type="password" id="password" name="password" placeholder="Please enter your password." class="button"></br>
+        <input type="submit" value="Login" class="submit">
+      </form>
+    </div>
+  </body>
+</div>
