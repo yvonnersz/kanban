@@ -16,9 +16,14 @@
   <body>
     <div class="nav">
 
-      <a href="/login">Log In</a>
-      <a href="/logout">Log Out</a>
+      <% if logged_in? %>
+        Welcome back, <%= current_user.username %>.
+        <a href="/logout">Log Out</a>
+      <% else %>
       <a href="/signup">Sign Up</a>
+        <a href="/login">Log In</a>
+      <% end %>
+
       <a href="/raw_materials">View Raw Materials</a>
 
     <div class="wrapper">
@@ -37,3 +42,4 @@
     <![endif]-->
   </body>
 </html>
+ 
