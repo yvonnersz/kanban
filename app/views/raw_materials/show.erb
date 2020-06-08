@@ -1,14 +1,39 @@
-<form method="POST" action="/raw_materials/<%= @raw_material.id %>/delete">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
+<div class="container">
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Patua+One&family=Rubik+Mono+One&family=Sigmar+One&family=Syncopate&display=swap');
+    </style>
+  </head>
 
-Chemical: <%= @raw_material.chemical %></br>
-Company: <%= @raw_material.company %></br>
-Lot Number: <%= @raw_material.lot_number %></br>
-Amount: <%= @raw_material.amount %></br>
+  <header>
+    <div class="user">
+      <h2><%= @raw_material.chemical %></h2></br>
+    </div>
+  </header>
 
-</br></br><a href="/raw_materials">View All</a>
-</br></br><a href="/raw_materials/<%= @raw_material.id %>/edit">Edit Raw Material</a>
+  <body>
 
+    <div class="show_raw_mat">
 
-<input type="submit" value="Delete">
-</form>
+      <form method="POST" action="/raw_materials/<%= @raw_material.id %>/delete">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+
+        <p><b>Company:</b> <%= @raw_material.company %></p>
+        <p><b>Lot Number:</b> <%= @raw_material.lot_number %></p>
+        <p><b>Amount (kg):</b> <%= @raw_material.amount %></p>
+        <p><b>Submitted by:</b> <%= @raw_material.user.username.capitalize %></p>
+
+      </br>
+      <% if @raw_material.user == current_user %>
+        <a href="/raw_materials/<%= @raw_material.id %>/edit">Edit Raw Material</a>
+      <% end %>
+      <a href="/raw_materials">View All Chemicals</a>
+
+      </br></br></br>
+      <input type="submit" value="Delete" class="submit">
+      </form>
+
+    </div>
+
+  </body>
+</div>
