@@ -1,26 +1,35 @@
-<h1>Edit a Raw Material</h1>
+<div class="container">
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Patua+One&family=Rubik+Mono+One&family=Sigmar+One&family=Syncopate&display=swap');
+    </style>
+  </head>
 
-<% if current_user == @raw_material.user %>
-<form method="POST" action="/raw_materials/<%= @raw_material.id %>">
-  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <header>
+    <div class="user">
+      <h2>Edit Raw Material</h2></br>
+    </div>
+  </header>
 
-  <label for="chemical">Chemical</label></br>
-  <input type="text" name="chemical" value="<%= @raw_material.chemical %>"></br>
+  <body>
 
-  <label for="company">Company</label></br>
-  <input type="text" name="company" value="<%= @raw_material.company %>"></br></br>
+    <% if current_user == @raw_material.user %>
+      <form method="POST" action="/raw_materials/<%= @raw_material.id %>">
+        <input id="hidden" type="hidden" name="_method" value="PATCH">
 
-  <label for="company">Lot Number</label></br>
-  <input type="text" name="lot_number" value="<%= @raw_material.lot_number %>"></br></br>
+        <input type="text" name="chemical" value="<%= @raw_material.chemical %>" class="button"></br>
+        <input type="text" name="company" value="<%= @raw_material.company %>" class="button"></br>
+        <input type="text" name="lot_number" value="<%= @raw_material.lot_number %>" class="button"></br>
+        <input type="text" name="amount" value="<%= @raw_material.amount %>" class="button"></br>
 
-  <label for="company">Amount (kg)</label></br>
-  <input type="text" name="amount" value="<%= @raw_material.amount %>"></br></br>
+        <input type="submit" value="Edit Raw Material" class="submit">
+      </form>
 
-  <input type="submit" value="Edit Raw Material">
+    <% else %>
+      You do not have access to edit this raw material.</br></br>
 
-</form>
+      <a href="/raw_materials">View All Chemicals</a>
+    <% end %>
 
-<% else %>
-You do not have access to edit this raw material.
-
-<% end %>
+  </body>
+</div>
