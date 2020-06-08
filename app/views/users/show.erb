@@ -23,8 +23,12 @@
           <% end %>
         <% end %>
 
-        <% user_chemicals.each.with_index(1) do |raw_material,index| %>
-        <%= index %>. <a href="/raw_materials/<%= raw_material.id %>"><%= raw_material.chemical %></a></br>
+        <% if user_chemicals.empty? %>
+          You have no submissions.
+        <% else %>
+          <% user_chemicals.each.with_index(1) do |raw_material,index| %>
+          <%= index %>. <a href="/raw_materials/<%= raw_material.id %>"><%= raw_material.chemical %></a></br>
+          <% end %>
         <% end %>
     </div>
 
