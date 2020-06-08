@@ -1,6 +1,6 @@
 <% if current_user == @user %>
 
-<h1><%= @user.username %>'s Showpage</h1>
+<h1><%= @user.username.capitalize %>'s Showpage</h1></br>
 
 <h3>View Your Chemicals</h3>
 
@@ -10,6 +10,11 @@
 <% end %>
 <% end %>
 
+</br></br>
+<a href="/raw_materials/new">Create Raw Material</a>
+
+
 <% else %>
-you cant cuz ur not the user
+You are not authorized to view this page.
 <% end %>
+

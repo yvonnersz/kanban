@@ -17,7 +17,7 @@
     <div class="nav">
 
       <% if logged_in? %>
-        Welcome back, <%= current_user.username %>.
+        Welcome back, <%= current_user.username.capitalize %>.
         <a href="/logout">Log Out</a>
       <% else %>
       <a href="/signup">Sign Up</a>
