@@ -1,17 +1,26 @@
-<h1>Create a Raw Material</h1>
+<div class="container">
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Patua+One&family=Rubik+Mono+One&family=Sigmar+One&family=Syncopate&display=swap');
+    </style>
+  </head>
 
-<form method="POST" action="/raw_materials">
-  <label for="chemical">Chemical</label></br>
-  <input type="text" name="chemical"></br>
+  <header>
+    <div class="user">
+      <h2>Create Raw Material</h2></br>
+    </div>
+  </header>
 
-  <label for="company">Company</label></br>
-  <input type="text" name="company"></br></br>
+  <body>
 
-  <label for="company">Lot Number</label></br>
-  <input type="text" name="lot_number"></br></br>
+    <form method="POST" action="/raw_materials">
+      <input type="text" name="chemical" placeholder="Please enter the chemical name." class="button"></br>
+      <input type="text" name="company" placeholder="Please enter the company name." class="button"></br>
+      <input type="text" name="lot_number" placeholder="Please enter the lot number." class="button"></br>
+      <input type="text" name="amount" placeholder="Please enter the amount in kilograms." class="button"></br>
 
-  <label for="company">Amount (kg)</label></br>
-  <input type="text" name="amount"></br></br>
+      <input type="submit" value="Create Raw Material" class="submit">
+    </form>
 
-  <input type="submit" value="Create Raw Material">
-</form>
+  </body>
+</div>
