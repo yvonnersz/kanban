@@ -16,19 +16,24 @@
       <% if current_user == @user %>
         <h3>View Your Chemicals</h3>
 
+        <% user_chemicals = [] %>
         <% @raw_materials.each do |raw_material| %>
           <% if raw_material.user == current_user %>
-            <a href="/raw_materials/<%= raw_material.id %>"><%= raw_material.chemical %></a></br>
+            <% user_chemicals << raw_material %></a>
           <% end %>
         <% end %>
 
-        </br></br>
+        <% user_chemicals.each.with_index(1) do |raw_material,index| %>
+        <%= index %>. <a href="/raw_materials/<%= raw_material.id %>"><%= raw_material.chemical %></a></br>
+        <% end %>
+    </div>
+
+        </br>
         <a href="/raw_materials/new">Create Raw Material</a>
 
       <% else %>
         You are not authorized to view this page.
       <% end %>
-    </div>
 
   </body>
 </div>
