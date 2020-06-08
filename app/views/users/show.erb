@@ -6,7 +6,7 @@
 
 <% @raw_materials.each do |raw_material| %>
 <% if raw_material.user == current_user %>
-<%= raw_material.chemical %></br>
+<a href="/raw_materials/<%= raw_material.id %>"><%= raw_material.chemical %></a></br>
 <% end %>
 <% end %>
 
