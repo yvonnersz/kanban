@@ -1,20 +1,34 @@
-<% if current_user == @user %>
+<div class="container">
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Patua+One&family=Rubik+Mono+One&family=Sigmar+One&family=Syncopate&display=swap');
+    </style>
+  </head>
 
-<h1><%= @user.username.capitalize %>'s Showpage</h1></br>
+  <header>
+    <div class="user">
+      <h2><%= @user.username.capitalize %>'s Showpage</h2></br>
+    </div>
+  </header>
 
-<h3>View Your Chemicals</h3>
+  <body>
+    <div class="user_chemicals">
+      <% if current_user == @user %>
+        <h3>View Your Chemicals</h3>
 
-<% @raw_materials.each do |raw_material| %>
-<% if raw_material.user == current_user %>
-<a href="/raw_materials/<%= raw_material.id %>"><%= raw_material.chemical %></a></br>
-<% end %>
-<% end %>
+        <% @raw_materials.each do |raw_material| %>
+          <% if raw_material.user == current_user %>
+            <a href="/raw_materials/<%= raw_material.id %>"><%= raw_material.chemical %></a></br>
+          <% end %>
+        <% end %>
 
-</br></br>
-<a href="/raw_materials/new">Create Raw Material</a>
+        </br></br>
+        <a href="/raw_materials/new">Create Raw Material</a>
 
+      <% else %>
+        You are not authorized to view this page.
+      <% end %>
+    </div>
 
-<% else %>
-You are not authorized to view this page.
-<% end %>
-
+  </body>
+</div>
