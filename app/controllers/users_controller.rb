@@ -22,7 +22,9 @@ class UsersController < ApplicationController
   end
 
   post '/users' do
-    if !params[:username].empty? && !params[:password].empty?
+    if User.find_by(:username => params[:username]) != nil
+      "Please enter a unique username."
+    elsif !params[:username].empty? && !params[:password].empty?
       @user = User.create(params)
       session[:user_id] = @user.id
       redirect "/users/#{@user.id}"
