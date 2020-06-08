@@ -103,6 +103,18 @@
     margin-left: 100px;
   }
 
+  .user h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-left: -5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
   .main {
     overflow: hidden;
   }
