@@ -126,7 +126,10 @@
     text-align: left;
     padding-left: 50px;
     padding-right: 50px;
+  }
 
+  .error p {
+    color: red;
   }
 
   .main {

@@ -10,6 +10,12 @@
   </header>
 
   <body>
+    <div class="error">
+      <% if flash[:message] %>
+        <p><%= flash[:message] %></p>
+      <% end %>
+    </div>
+
     <div class="form">
       <form method="POST" action="/users">
         <input type="text" id="username" name="username" placeholder="Please enter a username." class="button"></br>
