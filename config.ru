@@ -10,3 +10,4 @@ use Rack::MethodOverride
 run ApplicationController
 use UsersController
 use RawMaterialsController
+# Need these lines to run the controllers.
