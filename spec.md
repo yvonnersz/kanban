@@ -1,15 +1,27 @@
 # Specifications for the Sinatra Assessment
 
 Specs:
+
 - [x] Use Sinatra to build the app
-- [ ] Use ActiveRecord for storing information in a database
+      The 'sinatra' gem is installed.
+
+- [x] Use ActiveRecord for storing information in a database
+      ActiveRecord::Migration
+      ActiveRecord::Base
+
 - [x] Include more than one model class (e.g. User, Post, Category)
       The app has a User & RawMaterial model.
+
 - [x] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
       A user has a has_many relationship with RawMaterial.
+
 - [x] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
       RawMaterial has a belongs_to relationship with User.
-- [ ] Include user accounts with unique login attribute (username or email)
+
+- [x] Include user accounts with unique login attribute (username or email)
+      This is done by the following lines:
+      if User.find_by(:username => params[:username].downcase) != nil
+      flash[:message] = "The username has been taken. Please try again."
 
 - [x] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
       A user can create, read, update, and destroy a raw material.
