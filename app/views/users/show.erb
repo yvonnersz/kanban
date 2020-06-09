@@ -7,7 +7,11 @@
 
   <header>
     <div class="user">
-      <h2><%= @user.username.capitalize %>'s Showpage</h2></br>
+      <% if current_user == @user %>
+        <h2><%= @user.username.capitalize %>'s Showpage</h2></br>
+      <% else %>
+        <h2>Error</h2>
+      <% end %>
     </div>
   </header>
 
@@ -36,6 +40,7 @@
         <a href="/raw_materials/new">Create Raw Material</a>
 
       <% else %>
+      </br>
         You are not authorized to view this page.
       <% end %>
 
