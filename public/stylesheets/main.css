@@ -122,6 +122,12 @@
     padding-bottom: 25px;
   }
 
+  .user_chemicals li {
+    text-align: left;
+    padding-left: 175px;
+    padding-right: 175px;
+  }
+
   .show_raw_mat p {
     text-align: left;
     padding-left: 50px;
