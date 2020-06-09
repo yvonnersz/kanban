@@ -10,8 +10,12 @@ class RawMaterialsController < ApplicationController
   end
 
   post '/raw_materials' do
-    @raw_material = RawMaterial.create(params)
-    redirect "/raw_materials/#{@raw_material.id}"
+    if params[:chemical].empty? || params[:company].empty? || params[:lot_number].empty? || params[:amount].empty?
+      "Please enter in all required fields."
+    else
+      @raw_material = RawMaterial.create(params)
+      redirect "/raw_materials/#{@raw_material.id}"
+    end
   end
 
   get '/raw_materials/:id' do
