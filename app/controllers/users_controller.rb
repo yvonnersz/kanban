@@ -9,11 +9,19 @@ class UsersController < ApplicationController
   # Find user, authenticate user, redirect to user's landing page.
   post '/login' do
     @user = User.find_by(:username => params[:username])
-    if @user.authenticate(params[:password])
+
+    if params[:username].empty? || params[:password].empty?
+      flash[:message] = "Please enter in all required fields."
+      redirect '/login'
+    elsif @user == nil
+      flash[:message] = "We do not recognize this username."
+      redirect '/login'
+    elsif @user.authenticate(params[:password])
       session[:user_id] = @user.id # This logs the user in.
       redirect "users/#{@user.id}"
     else
-      redirect '/signup'
+      flash[:message] = "Incorrect password. Please try again."
+      redirect '/login'
     end
   end
 
