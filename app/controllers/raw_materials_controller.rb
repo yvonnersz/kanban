@@ -6,7 +6,12 @@ class RawMaterialsController < ApplicationController
   end
 
   get '/raw_materials/new' do
-    erb :'/raw_materials/new'
+    if logged_in?
+      erb :'/raw_materials/new'
+    else
+      flash[:message] = "Please login to create new raw materials."
+      erb :'/login'
+    end
   end
 
   post '/raw_materials' do
