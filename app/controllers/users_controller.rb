@@ -30,16 +30,16 @@ class UsersController < ApplicationController
   end
 
   post '/users' do
-    if User.find_by(:username => params[:username].downcase) != nil
+    if params[:username].empty? || params[:password].empty?
+      flash[:message] = "Please enter in all required fields."
+      redirect '/signup'
+    elsif User.find_by(:username => params[:username].downcase) != nil
       flash[:message] = "The username has been taken. Please try again."
       redirect '/signup'
-    elsif !params[:username].empty? && !params[:password].empty?
+    else
       @user = User.create(params)
       session[:user_id] = @user.id
       redirect "/users/#{@user.id}"
-    else
-      flash[:message] = "Please enter in all required fields."
-      redirect '/signup'
     end
   end
 
