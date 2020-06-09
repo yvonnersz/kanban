@@ -11,7 +11,8 @@ class RawMaterialsController < ApplicationController
 
   post '/raw_materials' do
     if params[:chemical].empty? || params[:company].empty? || params[:lot_number].empty? || params[:amount].empty?
-      "Please enter in all required fields."
+      flash[:message] = "Please enter in all required fields."
+      redirect '/raw_materials/new'
     else
       @raw_material = RawMaterial.create(params)
       @raw_material.user_id = current_user.id
