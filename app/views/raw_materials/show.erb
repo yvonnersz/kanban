@@ -26,12 +26,12 @@
       </br>
       <% if @raw_material.user == current_user %>
         <a href="/raw_materials/<%= @raw_material.id %>/edit">Edit Raw Material</a>
-      <% end %>
-      <a href="/raw_materials">View All Chemicals</a>
+        <a href="/raw_materials">View All Chemicals</a>
 
-      </br></br></br>
-      <input type="submit" value="Delete" class="submit">
-      </form>
+        </br></br></br>
+        <input type="submit" value="Delete" class="submit">
+        </form>
+      <% end %>
 
     </div>
 
