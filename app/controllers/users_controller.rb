@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   post '/users' do
-    if User.find_by(:username => params[:username]) != nil
+    if User.find_by(:username => params[:username].downcase) != nil
       "Please enter a unique username."
     elsif !params[:username].empty? && !params[:password].empty?
       @user = User.create(params)
