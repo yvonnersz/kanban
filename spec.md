@@ -10,11 +10,27 @@ Specs:
 - [x] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
       RawMaterial has a belongs_to relationship with User.
 - [ ] Include user accounts with unique login attribute (username or email)
+
 - [x] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
       A user can create, read, update, and destroy a raw material.
-- [ ] Ensure that users can't modify content created by other users
-- [ ] Include user input validations
-- [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+
+- [x] Ensure that users can't modify content created by other users
+      The creator to the content was saved by the following lines:
+      @raw_material.user == current_user
+      @raw_material.save
+
+      Pseudo-code:
+      if @raw_material.user == current_user
+      then the creator of the content will be able to edit or delete the selected content.
+
+- [x] Include user input validations
+      An error flash message pops up if any of the following text fields are empty:
+      params[:username], params[:password],
+      params[:chemical], params[:company], params[:lot_number], params[:amount].
+
+- [x] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
+      The gem 'sinatra-flash' was added to the Gemfile.
+
 - [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 
 Confirm
