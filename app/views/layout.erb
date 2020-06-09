@@ -16,15 +16,16 @@
   <body>
     <div class="nav">
 
+      <a href="/">Kanban</a>
+      <a href="/raw_materials">View Raw Materials</a>
+
       <% if logged_in? %>
-        Welcome back, <a href="/users/<%= current_user.id %>"><%= current_user.username.capitalize %>.</a>
-        <a href="/logout">Log Out</a>
+      <a href="/logout">Log Out</a>
+         Welcome back, <a href="/users/<%= current_user.id %>"><%= current_user.username.capitalize %>.</a>
       <% else %>
-      <a href="/signup">Sign Up</a>
+        <a href="/signup">Sign Up</a>
         <a href="/login">Log In</a>
       <% end %>
-
-      <a href="/raw_materials">View Raw Materials</a>
 
     <div class="wrapper">
 
@@ -42,4 +43,3 @@
     <![endif]-->
   </body>
 </html>
- 
