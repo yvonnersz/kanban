@@ -14,6 +14,8 @@ class RawMaterialsController < ApplicationController
       "Please enter in all required fields."
     else
       @raw_material = RawMaterial.create(params)
+      @raw_material.user_id = current_user.id
+      @raw_material.save
       redirect "/raw_materials/#{@raw_material.id}"
     end
   end
