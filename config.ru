@@ -5,9 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use Rack::MethodOverride
-# This line allows us to send PATCH and DELETE requests.
 
 run ApplicationController
 use UsersController
 use RawMaterialsController
-# Need these lines to run the controllers.
