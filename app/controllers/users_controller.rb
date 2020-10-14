@@ -1,12 +1,9 @@
 class UsersController < ApplicationController
 
-  # The purpose of this route is to render the login page.
   get '/login' do
     erb :login
   end
 
-  # The purpose of this route is to receive the login form.
-  # Find user, authenticate user, redirect to user's landing page.
   post '/login' do
     @user = User.find_by(:username => params[:username])
 
@@ -17,7 +14,7 @@ class UsersController < ApplicationController
       flash[:message] = "We do not recognize this username."
       redirect '/login'
     elsif @user.authenticate(params[:password])
-      session[:user_id] = @user.id # This logs the user in.
+      session[:user_id] = @user.id
       redirect "users/#{@user.id}"
     else
       flash[:message] = "Incorrect password. Please try again."
