@@ -51,7 +51,7 @@ Confirm
 - [x] You made the changes in a commit that relate to the commit message
 - [x] You don't include changes in a commit that aren't related to the commit message
 
-Notes After Assessment
+Notes After Assessment (10.14.2020)
 - Try to incorporate the build method.
 - Only "child table" gets the foreign key. The way it's set up now is that the parent table also has the foreign key. This can be eliminated by using the build method(?).
 - Read up on the '||=' (or-equals) operator.
