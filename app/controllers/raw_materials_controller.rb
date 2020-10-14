@@ -19,7 +19,7 @@ class RawMaterialsController < ApplicationController
       flash[:message] = "Please enter in all required fields."
       redirect '/raw_materials/new'
     else
-      @raw_material = RawMaterial.create(params)
+      @raw_material = RawMaterial.new(params)
       @raw_material.user_id = current_user.id
       @raw_material.save
       redirect "/raw_materials/#{@raw_material.id}"

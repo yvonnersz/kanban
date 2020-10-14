@@ -7,17 +7,14 @@ class UsersController < ApplicationController
   post '/login' do
     @user = User.find_by(:username => params[:username])
 
-    if params[:username].empty? || params[:password].empty?
-      flash[:message] = "Please enter in all required fields."
-      redirect '/login'
-    elsif @user == nil
-      flash[:message] = "We do not recognize this username."
-      redirect '/login'
-    elsif @user.authenticate(params[:password])
+    # if params[:username].empty? || params[:password].empty?
+    #   flash[:message] = "Please enter in all required fields."
+    #   redirect '/login'
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect "users/#{@user.id}"
     else
-      flash[:message] = "Incorrect password. Please try again."
+      flash[:message] = "Incorrect login. Please try again."
       redirect '/login'
     end
   end
